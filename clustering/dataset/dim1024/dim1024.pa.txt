@@ -1,8 +1,3 @@
-VQ PARTITIONING 2.0
-1024
-1024
-Ground truth partition
--------------------------------------
 1
 1
 1

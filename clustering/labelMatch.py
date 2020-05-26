@@ -41,10 +41,10 @@ def labelmatch(gold, predict, nk):
 # dataset = conjunto de dados
 
 def rotulos(particle, K, dataset, data):
-    rotulo = numpy.zeros(data.namostras) #gera array do tamanho da amostra com zeros
-    for i in range(0, data.namostras): #percorre todos os valores
-        melhor = float("inf") #starta com infinito o melhor valor
-        for r in range(0, K): #para cada cluster
+    rotulo = numpy.zeros(data.namostras)
+    for i in range(0, data.namostras):
+        melhor = float("inf")
+        for r in range(0, K):
             distancia = 0
             for k in range(0, data.ndim):
                 distancia = distancia + pow(particle[r][k] - dataset[i][k], 2)
