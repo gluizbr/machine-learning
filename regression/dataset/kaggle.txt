@@ -1,0 +1,8 @@
+Regressão
+https://www.kaggle.com/dileep070/heart-disease-prediction-using-logistic-regression
+
+
+https://www.kaggle.com/hellbuoy/car-price-prediction
+
+Redes neurais
+SVM
