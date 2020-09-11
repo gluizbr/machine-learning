@@ -1,0 +1,40 @@
+\chapter{Desenvolvimento}\label{cap_desenv}
+
+Para o desenvolvimento das atividades inicialmente foi escolhido uma base de dados. A base a ser utilizada corresponde a dados de \textit{pacientes} que estão confirmados com o vírus covid-19 (corona víŕus).
+
+\section{Pré-processamento e Visualização}
+Na base há dados categóricos e temporais, na base em questão alguns atributos numéricos foram removidos e outros foram discretizados, também foram gerados valores float para as datas que representam cada dia em questão.
+
+\section{Atributos}
+
+Os atributos utilizados do dataset foram idade, sexo, data de sintomas, data de entrada no hospital, data de confirmação do virus.
+
+O primeiro passo no pre-processamento dos dados é remover registros vazios que não possuiam alguma informação e irá atrapalhar o resultado obtido utilizando a biblioteca pandas.
+
+\section{Idade}
+Após a remoção dos valores em branco o atributo idade, é realizado uma validação de algumas idades que são reais ou seja entre 1 e 99 ou então informações em branco (NaN) são mantidas, outros valores como "4000" é removido devido a não representar nenhuma idade válida.
+
+Depois desse processo, os valores não numericos são preenchidos com a moda da idade.
+
+Os dados foram discretizados utilizando 3 possíveis valores, dentre eles 0 para crianças com menos de 15 anos, 1 para adultos entre 15 e 64 anos e 2 para idosos com mais de 64 anos.
+
+\section{Sexo}
+Para o sexo foi é uma normalização dos dados onde possuiam 5 possíveis valores, Female, female, Male, male, NaN, os valores que começam com a primeira letra em maiusculo devem ser alterados para ser todos minusculos.
+
+Os valores que estão vazios devem ser preenchidos com a moda dos valores para melhor visualização dos dados.
+
+Após este processamento deve ser discretizado os dados com 0 para male e 1 para female
+
+\section{Datas}
+As três possíveis datas do dataset selecionado serão processadas da mesma maneira, as datas estão em sua maioria no formato dd.mm.YYYY, algumas estão com o dia e o mes trocado, outras estão com informações por extenso como "final de dezembro" sem uma data especifica.
+
+As datas que possuem informações por extensos foram removidas do dataset para nao haver informações inconsistentes dentre os dados, as datas que possuiam o mes e o dia trocadas, foram alteradas para não serem descartadas de maneira desnecessária, visto que é possível indentificar essas datas.
+
+Após a normalização das datas, foi gerado um valor numerico que representa cada data, e os valores faltantes foram preenchidos com a média destes valores númericos representativos
+
+\section{Visualização dos Dados}
+É gerado sobre os dados a descrição deles com todos os valores utilizados para se gerar um blox-pot.
+
+Para visualizar os dados utilizando da biblioteca seaborn, e matplotlib, foram confrontados todos os dados e valores, gerando diversos graficos, alguns podem ser uteis na visualização das informações como entrada do hospital confrontando o inicio dos sintomas ou com a data de confirmacao confrontando a entrada no hospital é possível ver a linearidade dos dados, e de que a maioria das pessoas sentem os sintomas e depois são confirmados com a doença.
+
+Também é gerado um gráfico utilizando também da biblioteca seaborn para visualizar por exemplo que a maior quantidade de pessoas infectadas com o corona são adultos, e alguns idosos, com a minoria sendo crianças. Também é possível visualizar que a maioria das pessoas indentificadas são homens.
